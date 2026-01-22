@@ -311,11 +311,15 @@ function loadPublications() {
                         line3.appendChild(badge);
                     }
 
-                    // 2. Full Venue Name (No Year for Journals)
-                    const fullVenueName = getVenueFullName(pub.venue, pub.year);
-                    const venueNameSpan = document.createElement('span');
-                    venueNameSpan.textContent = fullVenueName;
-                    line3.appendChild(venueNameSpan);
+                  const customVenueText = pub.customVenue || getVenueFullName(pub.venue, pub.year);
+const venueNameSpan = document.createElement('span');
+if (pub.customVenue) {
+    venueNameSpan.textContent = customVenueText;
+    venueNameSpan.classList.add('custom-text'); // 添加自定义文本的样式类
+} else {
+    venueNameSpan.textContent = customVenueText;
+}
+line3.appendChild(venueNameSpan);
 
                     // 3. CCF Rank
                     const ccfRank = getCCFRank(fullVenueName, pub.venue);
