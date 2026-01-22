@@ -447,25 +447,25 @@ details summary {
     transform: translateY(-2px);
 }
 
-/* 缩略图容器 - 固定宽度 */
+/* 缩略图容器 - 修改为更合适的比例 */
 .pub-thumbnail-container {
     flex-shrink: 0;
-    width: 180px !important;
-    max-width: 180px !important;
-    min-width: 180px !important;
+    width: 150px !important; /* 减小宽度 */
+    max-width: 150px !important;
+    min-width: 150px !important;
     display: block;
 }
 
 .pub-thumbnail {
     width: 100%;
-    height: auto;
+    height: 180px; /* 固定高度，防止过长 */
     border-radius: 6px;
     border: 1px solid #e2e8f0;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     display: block;
-    object-fit: cover;
-    aspect-ratio: 4/3; /* 保持图片比例 */
+    object-fit: cover; /* 使用cover确保图片填充但不拉伸 */
+    object-position: center; /* 居中显示图片 */
 }
 
 .pub-with-thumbnail:hover .pub-thumbnail {
@@ -501,8 +501,17 @@ details summary {
     margin-bottom: 0.5rem;
 }
 
+/* 自定义第三行文字样式 */
 .pub-with-thumbnail .pub-line-3 {
     font-size: 0.9rem;
+    color: #64748b;
+    font-style: italic;
+}
+
+/* 添加自定义文本的样式，可以有不同的颜色或样式 */
+.pub-line-3 .custom-text {
+    font-weight: 600;
+    color: #dc2626; /* 红色突出显示 */
 }
 
 /* 无缩略图的论文条目保持原有样式 */
@@ -541,12 +550,13 @@ details summary {
     
     .pub-thumbnail-container {
         width: 100% !important;
-        max-width: 300px !important;
+        max-width: 150px !important; /* 移动端也保持适当宽度 */
         min-width: auto !important;
         margin: 0 auto;
     }
     
     .pub-thumbnail {
+        height: 160px; /* 移动端稍微减小高度 */
         max-width: 100%;
     }
     
@@ -563,9 +573,9 @@ details summary {
     }
     
     .pub-thumbnail-container {
-        width: 180px !important;
-        max-width: 180px !important;
-        min-width: 180px !important;
+        width: 150px !important;
+        max-width: 150px !important;
+        min-width: 150px !important;
     }
 }
 
