@@ -232,11 +232,11 @@
         
         <!-- 交换项目（可选添加） -->
         <div class="timeline-item flex gap-4">
-            <!-- 使用div作为背景容器 -->
-            <div class="w-16 h-16 flex-shrink-0 bg-white rounded-lg shadow-sm p-2 border border-neutral-100"
-                 style="background-image: url('assets/ruclogo.png'); background-size: contain; background-position: center; background-repeat: no-repeat;"
-                 onerror="this.style.backgroundImage='none'; this.innerHTML='<i class=\"fas fa-graduation-cap text-3xl text-neutral-300 w-full h-full flex items-center justify-center\"></i>
-            </div>
+             <!-- 添加轻微圆角，悬效效果 -->
+            <img src="assets/ruclogo.png" 
+                 alt="University of Technology Logo" 
+                 class="w-16 h-16 object-contain rounded-sm hover:scale-105 transition-transform duration-200"
+                 onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\"fas fa-graduation-cap text-3xl text-neutral-300\"></i>
             <div class="timeline-content">
                 <h3 class="font-semibold text-primary">Study Abroad Program</h3>
                 <p class="text-sm text-accent font-medium">International University</p>
