@@ -2,12 +2,12 @@
   {
     "title": "The lifespan of small and medium-sized enterprises in China: Stylized facts and influencing factors",
     "authors": "Songrui Liu, <strong>Xiaokun Yu</strong>, Wenkang Zhang, Zhongwen Zhang",
-    "venue": "Beijing, CNH",
+    "venue": "Research Article",
     "year": "2026",
-    "highlight": "Research Article",
-    "thumbnail": "assets/publications/placeholder/sme2.jpg",
+    "highlight": "",
+    "thumbnail": "assets/publications/placeholder/sme2.png",
     "tags": [
-      { "text": "Paper", "link": "#" },
+      { "text": "Paper", "link": "https://www.sciencedirect.com/science/article/abs/pii/S1043951X25002950"},
       { "text": "Code", "link": "#" },
       { "text": "Project Page", "link": "#" }
     ]
