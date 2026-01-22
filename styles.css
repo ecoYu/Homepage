@@ -426,10 +426,11 @@ details summary {
     color: #1e293b; /* primary */
 }
 
-/* 新增：有缩略图的论文条目布局 */
+/* 核心修复：有缩略图的论文条目布局 */
 .pub-with-thumbnail {
-    display: flex;
-    align-items: flex-start;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
     gap: 1.5rem;
     padding: 1.25rem;
     background-color: white;
@@ -446,10 +447,12 @@ details summary {
     transform: translateY(-2px);
 }
 
-/* 缩略图容器 */
+/* 缩略图容器 - 固定宽度 */
 .pub-thumbnail-container {
     flex-shrink: 0;
-    width: 180px; /* 缩略图固定宽度 */
+    width: 180px !important;
+    max-width: 180px !important;
+    min-width: 180px !important;
     display: block;
 }
 
@@ -461,6 +464,8 @@ details summary {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     display: block;
+    object-fit: cover;
+    aspect-ratio: 4/3; /* 保持图片比例 */
 }
 
 .pub-with-thumbnail:hover .pub-thumbnail {
@@ -468,10 +473,11 @@ details summary {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* 内容区域 */
+/* 内容区域 - 占据剩余空间 */
 .pub-with-thumbnail .pub-content-wrapper {
     flex: 1;
     min-width: 0; /* 防止内容溢出 */
+    overflow: hidden;
 }
 
 /* 调整有缩略图时的文本样式 */
@@ -482,7 +488,7 @@ details summary {
 .pub-with-thumbnail .pub-title-text {
     font-size: 1.1rem;
     line-height: 1.4;
-    display: inline-block;
+    display: inline;
     margin-right: 0.5rem;
 }
 
@@ -497,32 +503,6 @@ details summary {
 
 .pub-with-thumbnail .pub-line-3 {
     font-size: 0.9rem;
-}
-
-/* 移除旧的缩略图切换相关样式 */
-.pub-list-item.with-thumbnail-expanded,
-.pub-thumbnail-box,
-.pub-btn-preview,
-.pub-btn-preview.active {
-    display: none;
-}
-
-/* 响应式设计：在小屏幕上缩略图放在上方 */
-@media (max-width: 768px) {
-    .pub-with-thumbnail {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .pub-thumbnail-container {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-    
-    .pub-thumbnail {
-        max-width: 100%;
-    }
 }
 
 /* 无缩略图的论文条目保持原有样式 */
@@ -542,4 +522,54 @@ details summary {
 /* 确保无缩略图的论文条目中按钮样式一致 */
 .pub-list-item:not(.pub-with-thumbnail) .pub-link-btn {
     background-color: #f8fafc;
+}
+
+/* 移除旧的缩略图切换相关样式 */
+.pub-list-item.with-thumbnail-expanded,
+.pub-thumbnail-box,
+.pub-btn-preview,
+.pub-btn-preview.active {
+    display: none !important;
+}
+
+/* 响应式设计：在小屏幕上缩略图放在上方 */
+@media (max-width: 768px) {
+    .pub-with-thumbnail {
+        flex-direction: column !important;
+        gap: 1rem;
+    }
+    
+    .pub-thumbnail-container {
+        width: 100% !important;
+        max-width: 300px !important;
+        min-width: auto !important;
+        margin: 0 auto;
+    }
+    
+    .pub-thumbnail {
+        max-width: 100%;
+    }
+    
+    .pub-with-thumbnail .pub-content-wrapper {
+        width: 100%;
+    }
+}
+
+/* 确保在桌面端（>768px）保持水平布局 */
+@media (min-width: 769px) {
+    .pub-with-thumbnail {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+    }
+    
+    .pub-thumbnail-container {
+        width: 180px !important;
+        max-width: 180px !important;
+        min-width: 180px !important;
+    }
+}
+
+/* 确保其他元素的flexbox不会干扰 */
+.pub-list-item {
+    display: block;
 }
