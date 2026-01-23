@@ -67,10 +67,9 @@ section {
     position: relative;
 }
 
-
 .section-header h2 { 
     position: relative; 
-   display: inline-block;  
+    display: inline-block;  
 }
 
 .section-header h2::after {
@@ -83,7 +82,6 @@ section {
     background-color: rgba(212, 165, 98, 0.3);
     z-index: -1;
 } 
-
 
 /* Main Layout Grid */
 .grid-layout {
@@ -172,28 +170,40 @@ details summary {
 }
 
 .pub-list-ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
+    list-style-type: none;
+    padding-left: 0;
 }
 
 .pub-list-item {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
     line-height: 1.5;
+}
+
+.pub-list-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .pub-line-1 {
     font-size: 1rem;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
 }
 
 .pub-venue-tag {
     font-weight: 700;
     margin-right: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .pub-title-text {
     font-weight: 600;
     color: #1e293b;
+    font-size: 1.05rem;
+    line-height: 1.4;
 }
 
 .pub-link-btn {
@@ -240,7 +250,8 @@ details summary {
 .pub-line-2 {
     font-size: 0.95rem;
     color: #4b5563; /* neutral-600 */
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
 }
 
 .pub-line-2 strong, .pub-line-2 b {
@@ -252,6 +263,7 @@ details summary {
     font-size: 0.9rem;
     color: #64748b; /* slate-500 */
     font-style: italic;
+    line-height: 1.4;
 }
 
 /* Publication Card Typography (Legacy/Unused for now) */
@@ -414,72 +426,160 @@ details summary {
     color: #1e293b; /* primary */
 }
 
-/* Publication Thumbnail & Layout */
-.pub-content-wrapper {
-    width: 100%;
-}
-
-.pub-list-item.with-thumbnail-expanded {
-    display: flex;
+/* 核心修复：有缩略图的论文条目布局 */
+.pub-with-thumbnail {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
     gap: 1.5rem;
-    align-items: flex-start;
-    padding: 1rem;
+    padding: 1.25rem;
     background-color: white;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 }
 
-.pub-thumbnail-box {
-    width: 200px; /* Fixed width for thumbnail */
+.pub-with-thumbnail:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #d4a562;
+    transform: translateY(-2px);
+}
+
+/* 缩略图容器 - 修改为更合适的比例 */
+.pub-thumbnail-container {
     flex-shrink: 0;
-    order: -1; /* Move to the left */
-    border: none;
-    padding: 0;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-}
-
-.pub-thumbnail-box img {
-    width: 100%;
-    height: auto;
+    width: 150px !important; /* 减小宽度 */
+    max-width: 150px !important;
+    min-width: 150px !important;
     display: block;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.pub-list-item.with-thumbnail-expanded .pub-content-wrapper {
-    flex-grow: 1;
+.pub-thumbnail {
+    width: 100%;
+    height: 180px; /* 固定高度，防止过长 */
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: block;
+    object-fit: cover; /* 使用cover确保图片填充但不拉伸 */
+    object-position: center; /* 居中显示图片 */
 }
 
-/* Adjust text spacing in expanded mode */
-.pub-list-item.with-thumbnail-expanded .pub-line-1 {
+.pub-with-thumbnail:hover .pub-thumbnail {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* 内容区域 - 占据剩余空间 */
+.pub-with-thumbnail .pub-content-wrapper {
+    flex: 1;
+    min-width: 0; /* 防止内容溢出 */
+    overflow: hidden;
+}
+
+/* 调整有缩略图时的文本样式 */
+.pub-with-thumbnail .pub-line-1 {
     margin-bottom: 0.5rem;
 }
 
-.pub-list-item.with-thumbnail-expanded .pub-title-text {
-    font-size: 1.1rem; /* Larger title in expanded mode */
+.pub-with-thumbnail .pub-title-text {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    display: inline;
+    margin-right: 0.5rem;
 }
 
-.pub-btn-preview {
-    cursor: pointer;
+.pub-with-thumbnail .pub-venue-tag {
+    font-size: 0.85rem;
 }
 
+.pub-with-thumbnail .pub-line-2 {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+/* 自定义第三行文字样式 */
+.pub-with-thumbnail .pub-line-3 {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-style: italic;
+}
+
+/* 添加自定义文本的样式，可以有不同的颜色或样式 */
+.pub-line-3 .custom-text {
+    font-weight: 600;
+    color: #dc2626; /* 红色突出显示 */
+}
+
+/* 无缩略图的论文条目保持原有样式 */
+.pub-list-item:not(.pub-with-thumbnail) {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #f1f5f9;
+    transition: all 0.3s ease;
+}
+
+.pub-list-item:not(.pub-with-thumbnail):hover {
+    border-color: #d4a562;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 确保无缩略图的论文条目中按钮样式一致 */
+.pub-list-item:not(.pub-with-thumbnail) .pub-link-btn {
+    background-color: #f8fafc;
+}
+
+/* 移除旧的缩略图切换相关样式 */
+.pub-list-item.with-thumbnail-expanded,
+.pub-thumbnail-box,
+.pub-btn-preview,
 .pub-btn-preview.active {
-    background-color: #1e293b;
-    color: white;
-    border-color: #1e293b;
+    display: none !important;
 }
 
-/* Make sure mobile layout stacks */
-@media (max-width: 640px) {
-    .pub-list-item.with-thumbnail-expanded {
-        flex-direction: column;
+/* 响应式设计：在小屏幕上缩略图放在上方 */
+@media (max-width: 768px) {
+    .pub-with-thumbnail {
+        flex-direction: column !important;
+        gap: 1rem;
     }
-    .pub-thumbnail-box {
+    
+    .pub-thumbnail-container {
+        width: 100% !important;
+        max-width: 150px !important; /* 移动端也保持适当宽度 */
+        min-width: auto !important;
+        margin: 0 auto;
+    }
+    
+    .pub-thumbnail {
+        height: 160px; /* 移动端稍微减小高度 */
+        max-width: 100%;
+    }
+    
+    .pub-with-thumbnail .pub-content-wrapper {
         width: 100%;
-        max-width: 300px;
-        margin-top: 0.5rem;
     }
+}
+
+/* 确保在桌面端（>768px）保持水平布局 */
+@media (min-width: 769px) {
+    .pub-with-thumbnail {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+    }
+    
+    .pub-thumbnail-container {
+        width: 150px !important;
+        max-width: 150px !important;
+        min-width: 150px !important;
+    }
+}
+
+/* 确保其他元素的flexbox不会干扰 */
+.pub-list-item {
+    display: block;
 }
