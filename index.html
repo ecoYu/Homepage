@@ -166,10 +166,11 @@
 
 
 <!-- 横向缩略图展示区 - 固定六张缩略图 -->
-<div class="thumbnail-showcase-section" style="margin-bottom: 3rem;">
-    <h2 style="font-size: 1.875rem; line-height: 2.25rem; font-family: 'Crimson Text', serif; font-weight: 700; color: #0f172a; position: relative; display: inline-block; margin-bottom: 1.5rem;">
-        📸 Paper Thumbnails
-    </h2>
+ <section id="honors" class="scroll-mt-24">
+                        <div class="section-header mb-6 flex justify-between items-center">
+                            <h2 class="text-3xl font-serif font-bold text-primary">🏆 Honors & Awards</h2>
+                            <a href="pages/all-honors.html" class="text-sm font-medium text-accent hover:text-accent-dark transition-colors">View All <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
     
     <!-- 缩略图展示容器 - 固定六张缩略图 -->
     <div class="thumbnail-showcase-container" style="position: relative; width: 100%; border-radius: 10px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 1.5rem;">
@@ -238,10 +239,11 @@
             </div>
         </div>
         
-        <!-- 缩略图数量提示 -->
+        <!-- 缩略图数量提示 
         <div style="text-align: center; margin-top: 1rem; color: #64748b; font-size: 0.9rem; font-style: italic;">
             共展示6篇论文的缩略图
         </div>
+         -->
     </div>
 </div>
 
@@ -312,6 +314,25 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 </style>
 
+   <div id="honors-container" class="honors-list space-y-4">
+                            <!-- Dynamic Content loaded from data/honors.json -->
+                        </div>
+                    </section> 
+
+                    
+     <!-- Honors Section 
+                    <section id="honors" class="scroll-mt-24">
+                        <div class="section-header mb-6 flex justify-between items-center">
+                            <h2 class="text-3xl font-serif font-bold text-primary">🏆 Honors & Awards</h2>
+                            <a href="pages/all-honors.html" class="text-sm font-medium text-accent hover:text-accent-dark transition-colors">View All <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                        <div id="honors-container" class="honors-list space-y-4">
+                            <!-- Dynamic Content loaded from data/honors.json 
+                        </div>
+                    </section>  -->
+
+
+                    
 
                     
                     <!-- News Section -->
@@ -587,17 +608,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                  
 
-                    <!-- Honors Section -->
-                    <section id="honors" class="scroll-mt-24">
-                        <div class="section-header mb-6 flex justify-between items-center">
-                            <h2 class="text-3xl font-serif font-bold text-primary">🏆 Honors & Awards</h2>
-                            <a href="pages/all-honors.html" class="text-sm font-medium text-accent hover:text-accent-dark transition-colors">View All <i class="fas fa-arrow-right ml-1"></i></a>
-                        </div>
-                        <div id="honors-container" class="honors-list space-y-4">
-                            <!-- Dynamic Content loaded from data/honors.json -->
-                        </div>
-                    </section>
-
+               
                     <!-- Academic Service Section -->
                     <section id="services" class="scroll-mt-24">
                         <div class="section-header mb-6">
