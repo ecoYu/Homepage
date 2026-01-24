@@ -166,12 +166,19 @@
 
 
     
-    <!-- 缩略图展示容器 - 固定六张缩略图 -->
-                    <div class="thumbnail-showcase-section" style="margin-bottom: 3rem;">
-    <h2 style="font-size: 1.875rem; line-height: 2.25rem; font-family: 'Crimson Text', serif; font-weight: 700; color: #0f172a; position: relative; display: inline-block; margin-bottom: 1.5rem;">
-        🏆 Honors & Awards
-    </h2>
-    <a href="pages/all-honors.html" class="text-sm font-medium text-accent hover:text-accent-dark transition-colors">View All <i class="fas fa-arrow-right ml-1"></i></a>
+<div class="thumbnail-showcase-section" style="margin-bottom: 3rem;">
+    <!-- 标题和View All按钮容器 - 使用flex布局使其在同一行 -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.875rem; line-height: 2.25rem; font-family: 'Crimson Text', serif; font-weight: 700; color: #0f172a; position: relative; display: inline-block; margin: 0;">
+            🏆 Honors & Awards
+        </h2>
+        <a href="pages/all-honors.html" 
+           class="text-sm font-medium text-accent hover:text-accent-dark transition-colors"
+           style="white-space: nowrap;">
+            View All <i class="fas fa-arrow-right ml-1"></i>
+        </a>
+    </div>
+    
     <div class="thumbnail-showcase-container" style="position: relative; width: 100%; border-radius: 10px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 1.5rem;">
         <!-- 缩略图网格容器 -->
         <div class="thumbnail-grid" 
@@ -414,11 +421,11 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- 第一行：标签和按钮 -->
         <div style="margin-bottom: 0.25rem;">
             <span style="font-weight: 700; color: #dc2626; margin-right: 0.5rem; font-size: 1.05rem;">[Newspaper Article]</span>
-            <a href="https://www.entrepreneurdaily.cn/2025-08-27/6.html" 
+       <!--     <a href="https://www.entrepreneurdaily.cn/2025-08-27/6.html" 
                target="_blank" 
                style="display: inline-block; font-size: 0.75rem; padding: 0.1rem 0.5rem; border: 1px solid #cbd5e1; border-radius: 4px; color: #475569; text-decoration: none; background-color: #f8fafc;">
                 Link
-            </a>
+            </a> -->
         </div>
         
         <!-- 第二行：标题 -->
