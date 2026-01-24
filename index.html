@@ -165,310 +165,152 @@
                     </section>
 
 
-<!-- 横向缩略图展示区 - 放置在Publications Section之前或适当位置 -->
+<!-- 横向缩略图展示区 - 固定六张缩略图 -->
 <div class="thumbnail-showcase-section" style="margin-bottom: 3rem;">
     <h2 style="font-size: 1.875rem; line-height: 2.25rem; font-family: 'Crimson Text', serif; font-weight: 700; color: #0f172a; position: relative; display: inline-block; margin-bottom: 1.5rem;">
         📸 Paper Thumbnails
     </h2>
     
-    <!-- 缩略图展示容器 -->
-    <div class="thumbnail-showcase-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 10px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 1.5rem 0;">
-        <!-- 左侧渐变遮罩 -->
-        <div class="scroll-fade left" style="position: absolute; top: 0; left: 0; width: 60px; height: 100%; background: linear-gradient(90deg, rgba(248,250,252,1) 0%, rgba(248,250,252,0) 100%); z-index: 5; pointer-events: none;"></div>
-        
-        <!-- 右侧渐变遮罩 -->
-        <div class="scroll-fade right" style="position: absolute; top: 0; right: 0; width: 60px; height: 100%; background: linear-gradient(90deg, rgba(248,250,252,0) 0%, rgba(248,250,252,1) 100%); z-index: 5; pointer-events: none;"></div>
-        
-        <!-- 缩略图滚动容器 -->
-        <div class="thumbnail-scroll-wrapper" 
-             style="display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem 1.5rem; scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none;"
-             id="thumbnailScrollWrapper">
-            <!-- 缩略图项目列表 -->
-            <div class="thumbnail-item" style="flex: 0 0 auto; width: 130px; transition: transform 0.3s ease; position: relative;">
+    <!-- 缩略图展示容器 - 固定六张缩略图 -->
+    <div class="thumbnail-showcase-container" style="position: relative; width: 100%; border-radius: 10px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 1.5rem;">
+        <!-- 缩略图网格容器 -->
+        <div class="thumbnail-grid" 
+             style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; justify-items: center;">
+            
+            <!-- 缩略图1 -->
+            <div class="thumbnail-item" style="width: 130px; transition: all 0.3s ease; position: relative;">
                 <img src="assets/publications/placeholder/sme.jpg" 
                      alt="缩略图1" 
-                     style="width: 100%; height: 180px; border-radius: 6px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; transition: opacity 0.3s ease; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;">
+                     style="width: 100%; height: 180px; border-radius: 6px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(212, 165, 98, 0.85); opacity: 0; transition: opacity 0.3s ease; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; font-weight: 600;">
                     论文1
                 </div>
             </div>
             
-            <div class="thumbnail-item" style="flex: 0 0 auto; width: 130px; transition: transform 0.3s ease; position: relative;">
+            <!-- 缩略图2 -->
+            <div class="thumbnail-item" style="width: 130px; transition: all 0.3s ease; position: relative;">
                 <img src="assets/publications/placeholder/sme.jpg" 
                      alt="缩略图2" 
-                     style="width: 100%; height: 180px; border-radius: 6px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; transition: opacity 0.3s ease; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;">
+                     style="width: 100%; height: 180px; border-radius: 6px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(212, 165, 98, 0.85); opacity: 0; transition: opacity 0.3s ease; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; font-weight: 600;">
                     论文2
                 </div>
             </div>
             
-            <div class="thumbnail-item" style="flex: 0 0 auto; width: 130px; transition: transform 0.3s ease; position: relative;">
+            <!-- 缩略图3 -->
+            <div class="thumbnail-item" style="width: 130px; transition: all 0.3s ease; position: relative;">
                 <img src="assets/publications/placeholder/sme.jpg" 
                      alt="缩略图3" 
-                     style="width: 100%; height: 180px; border-radius: 6px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; transition: opacity 0.3s ease; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;">
+                     style="width: 100%; height: 180px; border-radius: 6px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(212, 165, 98, 0.85); opacity: 0; transition: opacity 0.3s ease; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; font-weight: 600;">
                     论文3
                 </div>
             </div>
             
-            <div class="thumbnail-item" style="flex: 0 0 auto; width: 130px; transition: transform 0.3s ease; position: relative;">
+            <!-- 缩略图4 -->
+            <div class="thumbnail-item" style="width: 130px; transition: all 0.3s ease; position: relative;">
                 <img src="assets/publications/placeholder/sme.jpg" 
                      alt="缩略图4" 
-                     style="width: 100%; height: 180px; border-radius: 6px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; transition: opacity 0.3s ease; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;">
+                     style="width: 100%; height: 180px; border-radius: 6px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(212, 165, 98, 0.85); opacity: 0; transition: opacity 0.3s ease; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; font-weight: 600;">
                     论文4
                 </div>
             </div>
             
-            <div class="thumbnail-item" style="flex: 0 0 auto; width: 130px; transition: transform 0.3s ease; position: relative;">
+            <!-- 缩略图5 -->
+            <div class="thumbnail-item" style="width: 130px; transition: all 0.3s ease; position: relative;">
                 <img src="assets/publications/placeholder/sme.jpg" 
                      alt="缩略图5" 
-                     style="width: 100%; height: 180px; border-radius: 6px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; transition: opacity 0.3s ease; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;">
+                     style="width: 100%; height: 180px; border-radius: 6px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(212, 165, 98, 0.85); opacity: 0; transition: opacity 0.3s ease; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; font-weight: 600;">
                     论文5
                 </div>
             </div>
             
-            <div class="thumbnail-item" style="flex: 0 0 auto; width: 130px; transition: transform 0.3s ease; position: relative;">
+            <!-- 缩略图6 -->
+            <div class="thumbnail-item" style="width: 130px; transition: all 0.3s ease; position: relative;">
                 <img src="assets/publications/placeholder/sme.jpg" 
                      alt="缩略图6" 
-                     style="width: 100%; height: 180px; border-radius: 6px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; transition: opacity 0.3s ease; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;">
+                     style="width: 100%; height: 180px; border-radius: 6px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(212, 165, 98, 0.85); opacity: 0; transition: opacity 0.3s ease; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; font-weight: 600;">
                     论文6
                 </div>
             </div>
-            
-            <!-- 第七张（隐藏的）缩略图，用于触发滑动 -->
-            <div class="thumbnail-item trigger-slide" style="flex: 0 0 auto; width: 130px; transition: transform 0.3s ease; position: relative;">
-                <img src="assets/publications/placeholder/sme.jpg" 
-                     alt="缩略图7" 
-                     style="width: 100%; height: 180px; border-radius: 6px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; transition: opacity 0.3s ease; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;">
-                    论文7
-                </div>
-            </div>
-            
-            <!-- 更多缩略图（示例） -->
-            <div class="thumbnail-item" style="flex: 0 0 auto; width: 130px; transition: transform 0.3s ease; position: relative;">
-                <img src="assets/publications/placeholder/sme.jpg" 
-                     alt="缩略图8" 
-                     style="width: 100%; height: 180px; border-radius: 6px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; transition: opacity 0.3s ease; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;">
-                    论文8
-                </div>
-            </div>
-            
-            <div class="thumbnail-item" style="flex: 0 0 auto; width: 130px; transition: transform 0.3s ease; position: relative;">
-                <img src="assets/publications/placeholder/sme.jpg" 
-                     alt="缩略图9" 
-                     style="width: 100%; height: 180px; border-radius: 6px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; transition: opacity 0.3s ease; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;">
-                    论文9
-                </div>
-            </div>
-            
-            <div class="thumbnail-item" style="flex: 0 0 auto; width: 130px; transition: transform 0.3s ease; position: relative;">
-                <img src="assets/publications/placeholder/sme.jpg" 
-                     alt="缩略图10" 
-                     style="width: 100%; height: 180px; border-radius: 6px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; transition: opacity 0.3s ease; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;">
-                    论文10
-                </div>
-            </div>
         </div>
         
-        <!-- 导航指示器 -->
-        <div class="nav-indicator" style="display: flex; justify-content: center; gap: 6px; margin-top: 1rem;">
-            <span class="indicator-dot active" style="width: 8px; height: 8px; border-radius: 50%; background-color: #d4a562; display: inline-block;"></span>
-            <span class="indicator-dot" style="width: 8px; height: 8px; border-radius: 50%; background-color: #cbd5e1; display: inline-block;"></span>
-            <span class="indicator-dot" style="width: 8px; height: 8px; border-radius: 50%; background-color: #cbd5e1; display: inline-block;"></span>
+        <!-- 缩略图数量提示 -->
+        <div style="text-align: center; margin-top: 1rem; color: #64748b; font-size: 0.9rem; font-style: italic;">
+            共展示6篇论文的缩略图
         </div>
-    </div>
-    
-    <!-- 控制按钮（可选） -->
-    <div class="thumbnail-controls" style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
-        <button class="scroll-btn left" style="padding: 0.5rem 1rem; background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; color: #475569; cursor: pointer; font-size: 0.9rem;">
-            <i class="fas fa-chevron-left"></i> 向左
-        </button>
-        <button class="scroll-btn right" style="padding: 0.5rem 1rem; background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; color: #475569; cursor: pointer; font-size: 0.9rem;">
-            向右 <i class="fas fa-chevron-right"></i>
-        </button>
     </div>
 </div>
 
+<!-- 悬停效果的JavaScript -->
 <script>
-// 等页面加载完成后执行
 document.addEventListener('DOMContentLoaded', function() {
-    const scrollWrapper = document.getElementById('thumbnailScrollWrapper');
     const thumbnailItems = document.querySelectorAll('.thumbnail-item');
-    const triggerSlideItems = document.querySelectorAll('.trigger-slide');
-    const scrollLeftBtn = document.querySelector('.scroll-btn.left');
-    const scrollRightBtn = document.querySelector('.scroll-btn.right');
-    const indicatorDots = document.querySelectorAll('.indicator-dot');
-    const leftFade = document.querySelector('.scroll-fade.left');
-    const rightFade = document.querySelector('.scroll-fade.right');
     
-    // 计算单次滚动的距离（一个缩略图宽度 + 间距）
-    const scrollAmount = 130 + 16; // 130px宽度 + 16px间距（1rem）
-    
-    // 当前滚动位置
-    let currentScroll = 0;
-    let maxScroll = scrollWrapper.scrollWidth - scrollWrapper.clientWidth;
-    let isAutoScrolling = false;
-    
-    // 更新遮罩显示状态
-    function updateFadeVisibility() {
-        if (currentScroll <= 10) {
-            leftFade.style.opacity = '0';
-        } else {
-            leftFade.style.opacity = '1';
-        }
+    // 为每个缩略图添加悬停效果
+    thumbnailItems.forEach(item => {
+        const img = item.querySelector('img');
+        const overlay = item.querySelector('.thumbnail-overlay');
         
-        if (currentScroll >= maxScroll - 10) {
-            rightFade.style.opacity = '0';
-        } else {
-            rightFade.style.opacity = '1';
-        }
-    }
-    
-    // 更新导航指示器
-    function updateIndicator() {
-        const pageIndex = Math.round(currentScroll / (scrollAmount * 6)); // 每页显示6个
-        indicatorDots.forEach((dot, index) => {
-            if (index === pageIndex) {
-                dot.style.backgroundColor = '#d4a562';
-                dot.style.transform = 'scale(1.2)';
-            } else {
-                dot.style.backgroundColor = '#cbd5e1';
-                dot.style.transform = 'scale(1)';
-            }
-        });
-    }
-    
-    // 滚动到指定位置
-    function scrollTo(position) {
-        scrollWrapper.scrollTo({
-            left: position,
-            behavior: 'smooth'
-        });
-        currentScroll = position;
-        updateFadeVisibility();
-        updateIndicator();
-    }
-    
-    // 向右滚动
-    function scrollRight() {
-        if (currentScroll >= maxScroll) return;
-        
-        let newScroll = currentScroll + scrollAmount * 3; // 一次滚动3个缩略图
-        
-        // 如果超过最大滚动距离，滚动到最后
-        if (newScroll > maxScroll) {
-            newScroll = maxScroll;
-        }
-        
-        scrollTo(newScroll);
-    }
-    
-    // 向左滚动
-    function scrollLeft() {
-        if (currentScroll <= 0) return;
-        
-        let newScroll = currentScroll - scrollAmount * 3; // 一次滚动3个缩略图
-        
-        // 如果小于0，滚动到最前
-        if (newScroll < 0) {
-            newScroll = 0;
-        }
-        
-        scrollTo(newScroll);
-    }
-    
-    // 自动滑动检测
-    function setupAutoSlide() {
-        // 监听鼠标在滚动容器上的移动
-        scrollWrapper.addEventListener('mousemove', function(e) {
-            if (isAutoScrolling) return;
-            
-            const rect = scrollWrapper.getBoundingClientRect();
-            const mouseX = e.clientX - rect.left;
-            const wrapperWidth = rect.width;
-            
-            // 如果鼠标在右侧20%区域内，且当前不是最右侧
-            if (mouseX > wrapperWidth * 0.8 && currentScroll < maxScroll) {
-                // 延迟0.5秒后自动滑动
-                isAutoScrolling = true;
-                setTimeout(() => {
-                    scrollRight();
-                    isAutoScrolling = false;
-                }, 500);
-            }
+        item.addEventListener('mouseenter', function() {
+            overlay.style.opacity = '1';
+            img.style.transform = 'scale(1.05)';
+            img.style.boxShadow = '0 6px 16px rgba(0,0,0,0.2)';
+            item.style.transform = 'translateY(-5px)';
         });
         
-        // 为每个缩略图添加悬停效果
-        thumbnailItems.forEach(item => {
-            const overlay = item.querySelector('.thumbnail-overlay');
-            
-            item.addEventListener('mouseenter', function() {
-                overlay.style.opacity = '1';
-                item.style.transform = 'translateY(-5px)';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                overlay.style.opacity = '0';
-                item.style.transform = 'translateY(0)';
-            });
+        item.addEventListener('mouseleave', function() {
+            overlay.style.opacity = '0';
+            img.style.transform = 'scale(1)';
+            img.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+            item.style.transform = 'translateY(0)';
         });
-    }
-    
-    // 监听滚动事件
-    scrollWrapper.addEventListener('scroll', function() {
-        currentScroll = scrollWrapper.scrollLeft;
-        maxScroll = scrollWrapper.scrollWidth - scrollWrapper.clientWidth;
-        updateFadeVisibility();
-        updateIndicator();
+        
+        // 点击缩略图可以跳转到对应论文（可选功能）
+        item.addEventListener('click', function() {
+            // 这里可以添加点击跳转功能
+            console.log('点击了缩略图:', item.querySelector('img').alt);
+            // 例如：window.location.href = '论文链接';
+        });
     });
-    
-    // 初始化遮罩显示
-    updateFadeVisibility();
-    
-    // 设置自动滑动
-    setupAutoSlide();
-    
-    // 按钮事件监听
-    if (scrollLeftBtn) {
-        scrollLeftBtn.addEventListener('click', scrollLeft);
-    }
-    
-    if (scrollRightBtn) {
-        scrollRightBtn.addEventListener('click', scrollRight);
-    }
-    
-    // 初始更新指示器
-    updateIndicator();
 });
 </script>
 
 <style>
-/* 隐藏滚动条 */
-#thumbnailScrollWrapper::-webkit-scrollbar {
-    display: none;
+/* 响应式设计：在移动设备上显示3列，桌面设备显示6列 */
+@media (max-width: 768px) {
+    .thumbnail-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.75rem !important;
+    }
+    
+    .thumbnail-item {
+        width: 100px !important;
+    }
+    
+    .thumbnail-item img {
+        height: 140px !important;
+    }
 }
 
-/* 悬停效果优化 */
-.thumbnail-item:hover {
-    cursor: pointer;
+@media (max-width: 480px) {
+    .thumbnail-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important;
+    }
+    
+    .thumbnail-item {
+        width: 90px !important;
+    }
+    
+    .thumbnail-item img {
+        height: 120px !important;
+    }
 }
 </style>
-
-
-
-
-
-
-
-
-
 
 
                     
