@@ -712,4 +712,64 @@ details summary {
 
 ---END CODE---
 
+---BEGIN CODE---
+
+/* Featured Image Section (p1) */
+.featured-image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.featured-image-container {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 3 / 2;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featured-image-container:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    transform: translateY(-6px);
+}
+
+.featured-image-container a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.featured-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featured-image-container:hover img {
+    transform: scale(1.08);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .featured-image-container {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-image-container {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+---END CODE---
 
