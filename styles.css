@@ -719,57 +719,98 @@ details summary {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-bottom: 3rem;
 }
 
 .featured-image-container {
-    width: 100%;
+    width: 75%;
     max-width: 100%;
-    aspect-ratio: 3 / 2;
-    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
     border-radius: 16px;
-    overflow: hidden;
+    padding: 1.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .featured-image-container:hover {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
     transform: translateY(-6px);
+    border-color: #d4a562;
+}
+
+.featured-image-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
 }
 
 .featured-image-container a {
     display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
     overflow: hidden;
-    border-radius: 16px;
 }
 
 .featured-image-container img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    object-fit: contain;
 }
 
 .featured-image-container:hover img {
     transform: scale(1.08);
 }
 
+.featured-image-caption {
+    width: 100%;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.5;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
 /* 响应式设计 */
+@media (max-width: 1024px) {
+    .featured-image-container {
+        width: 85%;
+        padding: 1.25rem;
+    }
+}
+
 @media (max-width: 768px) {
     .featured-image-container {
-        aspect-ratio: 4 / 3;
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .featured-image-caption {
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
     .featured-image-container {
-        aspect-ratio: 16 / 9;
+        width: 95%;
+        padding: 0.75rem;
+    }
+
+    .featured-image-caption {
+        font-size: 0.85rem;
     }
 }
+
 
 ---END CODE---
 
